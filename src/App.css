@@ -1,0 +1,66 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #4a90e2; /* Example blue background */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.App-icon {
+  height: 50px; /* Adjust as needed */
+}
+
+.middleContent{
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* Sidebar Styles */
+/* Sidebar Styles */
+.side-items {
+  background-color: #4a90e2; /* Dark background for sidebar */
+  color: white;
+  width: 200px; /* Adjust the width as needed */
+  height: 100vh; /* Full height */
+  padding: 20px;
+}
+
+.side-items ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+
+.side-items li {
+  margin-bottom: 20px; /* Spacing between items */
+}
+
+.side-items a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Adjust font size as needed */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.side-items a:hover {
+  color: #3498db; /* Change color on hover */
+}
+
+
+
+/* Footer Styles */
+.footer-content {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
