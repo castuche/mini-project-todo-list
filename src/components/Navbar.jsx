@@ -1,10 +1,10 @@
-import 'src/index.css'
+import classes from '../styles/Navbar.module.css'
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <h1 className="App-name">To-Do List App</h1>
-      <img src="/To-Do_icon.png" alt="To-Do List Logo" className="App-icon" />
+    <nav className={classes.navbar}>
+      <h1 className={classes.Appname}>To-Do List App</h1>
+      <img src="<../assets/app-logo.svg" alt="App to do list logo" className={classes.AppIcon} />
     </nav>
   );
 }

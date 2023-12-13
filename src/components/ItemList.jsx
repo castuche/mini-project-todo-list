@@ -1,33 +1,43 @@
-import itemsList from "../data/items.json";
-import classes from "../styles/itemsList.module.css";
-import { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from 'react';
+import itemsList from '../data/items.json';
+import classes from '../styles/ItemsList.module.css';
+import ItemCard from './ItemCard.jsx';
 
-
-function ItemList(){
-
+function ItemList() {
     const [items, setItems] = useState(itemsList);
 
-    const clickToDelete = itemId => {
-        const  filteredList = items.filter(eachItem =>{
-            return eachItem.id !== itemId;
-        }); setItems(filteredList);
-    }
+    const handleDelete = idToDelete => {
+        const filteredList = items.filter(currentItem => currentItem.id !== idToDelete);
+        setItems(filteredList);
+    };
 
-    
-      return (
-        <div className={classes.listContainer}>
-            <ul>
-            {items.map((item) => (
-                    <div className={classes.cards} key={uuidv4()}> 
-                    <p>{item.task}</p>
-                    <p>checkbox</p>
-                    <button onClick={()=> clickToDelete(item.id)} className={classes.deleteButton}>delete</button>
-        </div>     
-            ))}
-            </ul>
-        </div>
-    )
+    return <ItemCard items={items} handleDelete={handleDelete} />;
 }
 
-export default ItemList ;
+export default ItemList;
+
+
+
+/* import itemsList from "../data/items.json";
+import classes from "../styles/ItemsList.module.css"
+import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
+import ItemCard from "./ItemCard.jsx";
+
+function ItemList(){
+    const [items, setItems] = useState(itemsList);
+
+    const handleDelete = idToDelete => {
+        const filteredList = items.filter(currentItem => currentItem.id !== idToDelete)
+        setItems(filteredList)
+    }
+
+    return (
+    <ItemCard(items,handleDelete)/>
+    );
+     }
+  
+
+export default ItemList ; */
+
+

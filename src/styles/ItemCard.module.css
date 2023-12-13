@@ -1,0 +1,28 @@
+.card{
+    background-color: #f2f2f7; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    transition: background-color 0.2s; 
+    width:100vb;
+  }
+
+  .labelDone{
+    padding: 5px;
+    background-color: aquamarine;
+    border-radius: 3px;
+    margin:30px;
+  }
+
+  .labelNotDone{
+    padding: 5px;
+    background-color: tomato;
+    border-radius: 3px;
+    color:white;
+    margin:30px;
+  }
+
+  .deleteButton {
+    margin-left: 20 px;
+  }
+  

@@ -1,0 +1,17 @@
+
+.sideItems {
+    background-color: #4a90e2; 
+    color: white;
+    width: 200px; 
+    padding: 20px;
+    font-size: 25px;
+  }
+  
+  .sideItems ul {
+    list-style-type: none; 
+    padding: 0;
+  }
+  
+  .sideItems li {
+    margin-bottom: 20px; 
+  }

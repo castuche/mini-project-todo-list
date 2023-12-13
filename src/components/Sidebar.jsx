@@ -1,9 +1,11 @@
+import classes from '../styles/Sidebar.module.css'
+
 function Sidebar() {
     return (
-      <aside className="side-items">
+      <aside className={classes.sideItems}>
         <ul>
-          <li><a href="#home" className="homePage">Home</a></li>
-          <li><a href="#about" className="aboutPage">About</a></li>
+          <li>Home</li>
+          <li>About</li>
         </ul>
       </aside>
     );
