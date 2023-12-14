@@ -1,0 +1,10 @@
+.pageNotFound {
+height: 100vh;
+display: flex;
+justify-content: center;
+}
+
+.pageNotFound h1 {
+    color:#4a90e2;
+    padding: 40px;
+}
