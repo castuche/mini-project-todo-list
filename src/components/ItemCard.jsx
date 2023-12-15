@@ -10,18 +10,30 @@ function ItemCard({ items, handleDelete }) {
         <div className={classes.card} key={currentItem.id}>
           <Link to={`/detail/${currentItem.id}`}>
             <h2>{currentItem.task}</h2>
-            {currentItem.completed ? (
-              <label className={classes.labelDone}>Done</label>
-            ) : (
-              <label className={classes.labelNotDone}>Not done</label>
-            )}
+            <div className={classes.labelsContainer}>
+              {currentItem.completed ? (
+                <label className={classes.labelDone}>Done</label>
+              ) : (
+                <label className={classes.labelNotDone}>Not done</label>
+              )}
+              {currentItem.deadline && (
+                <label className={classes.labelDeadline}>
+                  DDL: {currentItem.deadline}
+                </label>
+              )}
+              {currentItem.priority && (
+                <label className={classes.labelPriority}>
+                  Priority: {currentItem.priority}
+                </label>
+              )}
+            </div>
           </Link>
           <button
             className={classes.deleteButton}
             type="button"
             onClick={() => handleDelete(currentItem.id)}
           >
-            Delete this task
+        
           </button>
         </div>
       ))}

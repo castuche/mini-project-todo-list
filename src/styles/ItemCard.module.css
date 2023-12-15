@@ -1,31 +1,71 @@
+
  .card{
     background-color: #f2f2f7; 
     margin-bottom: 10px; 
     padding: 10px; 
     border-radius: 5px; 
     transition: background-color 0.2s; 
-    width:100vb;
+    width:80vb;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
   }
+
 
   .labelDone{
     padding: 5px;
-    background-color: aquamarine;
+    background-color: rgb(127, 165, 255);
     border-radius: 3px;
     margin:30px;
   }
 
   .labelNotDone{
     padding: 5px;
-    background-color: tomato;
+    background-color: rgb(127, 165, 255);
+    border-radius: 3px;
+    margin:30px;
+  }
+
+  .labelDeadline
+  {
+    padding: 5px;
+    background-color: rgba(255, 181, 71, 0.744);
     border-radius: 3px;
     color:white;
     margin:30px;
   }
 
-  .deleteButton {
-    margin-left: 20 px;
-  } 
-  
+  .labelPriority
+  {
+    padding: 5px;
+    background-color: rgba(255, 99, 71, 0.744);
+    border-radius: 3px;
+    color:white;
+    margin:30px;
+  }
+
+
+
+/* Your existing styles */
+
+.deleteButton {
+  margin-left: auto; /* Push the delete button to the left within the card */
+  width: 30px;
+  height: 30px;
+  background: url('src/assets/delete.png') no-repeat center center;
+  background-size: cover;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.deleteButton:hover {
+  background-color: #ff6347;
+}
+
+
 
 
 

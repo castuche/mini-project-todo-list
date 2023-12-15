@@ -2,6 +2,7 @@
 import classes from "../styles/ItemsList.module.css";
 import { useState } from "react";
 import ItemCard from "./ItemCard.jsx";
+import AddTaskForm from "./AddTaskForm.jsx";
 import itemsList from "../data/items.json";
 
 function ItemList() {
@@ -21,7 +22,6 @@ function ItemList() {
     setEditingItemId((prevId) => (prevId === id ? null : id));
   };
 
-
   const handleEdit = (id, newTask) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, task: newTask } : item
@@ -29,7 +29,6 @@ function ItemList() {
     setItems(updatedItems);
     setEditingItemId(null);
   };
-
 
   const handleCheckboxChange = (id) => {
     if (selectedTasks.includes(id)) {
@@ -47,42 +46,56 @@ function ItemList() {
     setSelectedTasks([]);
   };
 
-  const handleAddTask = (completed) => {
+  const handleAddTask = (formData) => {
     const newTask = {
       id: items.length + 1,
-      task: `New Task ${items.length + 1}`,
-      completed: completed,
+      ...formData,
     };
 
-    setItems([...items, newTask]);
+    // Determine which list to add the task based on the 'completed' status
+    setItems((prevItems) => (formData.completed ? [...prevItems, newTask] : [newTask, ...prevItems]));
   };
+
+  // Separate completed and not completed tasks
+  const completedTasks = items.filter((item) => item.completed);
+  const notCompletedTasks = items.filter((item) => !item.completed);
 
   return (
     <div>
-      <h2>Not Completed Tasks</h2>
-      <ItemCard
-        items={items.filter((item) => !item.completed)}
-        handleToggleComplete={handleToggleComplete}
-        handleToggleEdit={handleToggleEdit}
-        handleEdit={handleEdit}
-        handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
-        handleCheckboxChange={handleCheckboxChange}
-        selectedTasks={selectedTasks}
-      />
-      <button onClick={() => handleAddTask(false)}>Add New Task</button>
+      {/* AddTaskForm component at the top */}
+      <AddTaskForm handleAddTask={handleAddTask} />
 
-      <h2>Completed Tasks</h2>
-      <ItemCard
-        items={items.filter((item) => item.completed)}
-        handleToggleComplete={handleToggleComplete}
-        handleToggleEdit={handleToggleEdit}
-        handleEdit={handleEdit}
-        handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
-        handleCheckboxChange={handleCheckboxChange}
-        selectedTasks={selectedTasks}
-      />
-      <button onClick={() => handleAddTask(true)}>Add New Task</button>
+      <div className={classes.columns}>
+        {/* Completed Tasks column */}
+        <div className={classes.column}>
+          <h2>Done</h2>
+          <ItemCard
+            items={completedTasks}
+            handleToggleComplete={handleToggleComplete}
+            handleToggleEdit={handleToggleEdit}
+            handleEdit={handleEdit}
+            handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
+            handleCheckboxChange={handleCheckboxChange}
+            selectedTasks={selectedTasks}
+          />
+        </div>
 
+        {/* Not Completed Tasks column */}
+        <div className={classes.column}>
+          <h2>To Do</h2>
+          <ItemCard
+            items={notCompletedTasks}
+            handleToggleComplete={handleToggleComplete}
+            handleToggleEdit={handleToggleEdit}
+            handleEdit={handleEdit}
+            handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
+            handleCheckboxChange={handleCheckboxChange}
+            selectedTasks={selectedTasks}
+          />
+        </div>
+      </div>
+
+      {/* Delete selected button */}
       {selectedTasks.length > 0 && (
         <button onClick={handleDeleteSelected}>Delete Selected</button>
       )}

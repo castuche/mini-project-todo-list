@@ -1,0 +1,70 @@
+/* ItemsList.module.css */
+.columns {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  h2 {
+    color: #6574cd;
+    text-align: center;
+  }
+  
+  /* Optional: You can add more styling to the ItemCard component */
+  .card {
+    background-color: #f2f2f7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .labelDone {
+    padding: 5px;
+    background-color: rgb(127, 165, 255);
+    border-radius: 3px;
+    margin: 10px;
+  }
+  
+  .labelNotDone {
+    padding: 5px;
+    background-color: rgb(127, 165, 255);
+    border-radius: 3px;
+    margin: 10px;
+  }
+  
+  .labelDeadline {
+    padding: 5px;
+    background-color: rgba(255, 181, 71, 0.744);
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+  }
+  
+  .labelPriority {
+    padding: 5px;
+    background-color: rgba(255, 99, 71, 0.744);
+    border-radius: 3px;
+    color: white;
+    margin: 10px;
+  }
+  
+  /* .deleteButton {
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgba(255, 99, 71, 0.744);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #ff6347;
+  } */
+  
