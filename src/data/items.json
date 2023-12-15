@@ -2,7 +2,7 @@
   {
     "id": 1,
     "task": "Read the project brief",
-    "completed": true,
+    "completed": false,
     "deadline": "2023-12-20",
     "priority": "High"
   },

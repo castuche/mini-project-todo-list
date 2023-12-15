@@ -1,70 +1,77 @@
 
- .card{
-    background-color: #f2f2f7; 
-    margin-bottom: 10px; 
-    padding: 10px; 
-    border-radius: 5px; 
-    transition: background-color 0.2s; 
-    width:80vb;
-    display: flex;
-    flex-wrap: wrap;
-    
-    
-  }
+.card{
+  background-color: #f2f2f7; 
+  margin-bottom: 10px; 
+  padding: 10px; 
+  border-radius: 5px; 
+  transition: background-color 0.2s; 
+  width:80vb;
+  display: flex;
+  flex-wrap: wrap;
+  
+
+  justify-content: space-between; /* Place items at each end of the container */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Set position to relative for absolute positioning of delete button */
+  
+}
 
 
-  .labelDone{
-    padding: 5px;
-    background-color: rgb(127, 165, 255);
-    border-radius: 3px;
-    margin:30px;
-  }
+.labelDone{
+  padding: 5px;
+  background-color: rgb(127, 165, 255);
+  border-radius: 3px;
+  margin:30px;
+}
 
-  .labelNotDone{
-    padding: 5px;
-    background-color: rgb(127, 165, 255);
-    border-radius: 3px;
-    margin:30px;
-  }
+.labelNotDone{
+  padding: 5px;
+  background-color: rgb(127, 165, 255);
+  border-radius: 3px;
+  margin:30px;
+}
 
-  .labelDeadline
-  {
-    padding: 5px;
-    background-color: rgba(255, 181, 71, 0.744);
-    border-radius: 3px;
-    color:white;
-    margin:30px;
-  }
+.labelDeadline
+{
+  padding: 5px;
+  background-color: rgba(255, 181, 71, 0.744);
+  border-radius: 3px;
+  color:white;
+  margin:30px;
+}
 
-  .labelPriority
-  {
-    padding: 5px;
-    background-color: rgba(255, 99, 71, 0.744);
-    border-radius: 3px;
-    color:white;
-    margin:30px;
-  }
+.labelPriority
+{
+  padding: 5px;
+  background-color: rgba(255, 99, 71, 0.744);
+  border-radius: 3px;
+  color:white;
+  margin:30px;
+}
 
 
 
 /* Your existing styles */
 
 .deleteButton {
-  margin-left: auto; /* Push the delete button to the left within the card */
-  width: 30px;
-  height: 30px;
-  background: url('src/assets/delete.png') no-repeat center center;
-  background-size: cover;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-block;
+margin-left: auto; /* Push the delete button to the left within the card */
+width: 42px;
+height: 42px;
+background: url('src/assets/delete.png') no-repeat center center;
+background-size: cover;
+border: none;
+padding: 0;
+cursor: pointer;
+display: inline-block;
+
+position: absolute; /* Set position to absolute */
+top: 30%; /* Align to the top */
+right: 12%; /* Align to the right */
 }
 
 .deleteButton:hover {
-  background-color: #ff6347;
+background-color: #ff6347;
 }
-
 
 
 
