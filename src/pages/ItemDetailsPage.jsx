@@ -50,7 +50,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-      <h2>Edit Task</h2>
+      <h2>Task</h2>
       <form className={classes.addTaskForm} onSubmit={handleSubmit}>
         <label>
           Task:
@@ -95,7 +95,7 @@ const handleSubmit = (e) => {
           </select>
         </label>
 
-        <button type="submit">Save Changes</button>
+        <button type="submit">Save</button>
 
       </form>
     </>

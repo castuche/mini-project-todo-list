@@ -61,12 +61,9 @@ const handleUpdateTask = async (id, updatedData) => {
 };
 
   
-  
-
   return (
     <div>
       <AddTaskForm handleAddTask={handleAddTask} />
-
       <div className={classes.columns}>
         <div className={classes.column}>
           <h2>Done</h2>
@@ -102,6 +99,8 @@ const handleUpdateTask = async (id, updatedData) => {
           onUpdate={onUpdate}
         />
       )}
+
+      
     </div>
   );
 }

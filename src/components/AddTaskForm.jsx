@@ -1,6 +1,7 @@
 // AddTaskForm.jsx
 import React, { useState, useEffect } from 'react';
 import classes from '../styles/AddTaskForm.module.css';
+import backgroundImage from '../assets/Background.png';
 
 function AddTaskForm({ handleAddTask, initialData }) {
   const [formData, setFormData] = useState({
@@ -40,7 +41,8 @@ function AddTaskForm({ handleAddTask, initialData }) {
   };
 
   return (
-    <form className={classes.addTaskForm} onSubmit={handleSubmit}>
+    <form className={classes.addTaskForm} onSubmit={handleSubmit}  style={{ backgroundImage: `url(${backgroundImage})` }}>
+
       <p className={classes.Title}></p>
       <label>
         Task:
@@ -85,6 +87,8 @@ function AddTaskForm({ handleAddTask, initialData }) {
         </select>
       </label>
       <button type="submit">Add Task</button>
+
+    
     </form>
   );
 }

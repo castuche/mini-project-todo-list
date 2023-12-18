@@ -1,0 +1,12 @@
+/* DashboardPage.module.css */
+.dashboardPage {
+    /* Add your background image path */
+    background-image: url('../assets/Backgournd_main.png');
+    /* Set other background properties as needed */
+    background-size: cover;
+    background-position: center;
+    /* Set a fixed height or use min-height to cover the entire page */
+    min-height: 100vh;
+    /* Add other styles as needed */
+  }
+  
