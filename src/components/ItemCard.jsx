@@ -33,7 +33,7 @@ function ItemCard({ items, handleToggleComplete, handleDelete }) {
               ></button>
             </div>
           ) : (
-            <div onClick={() => handleToggleComplete(currentItem.id)}>
+            <div>
               <Link to={`/detail/${currentItem.id}`}>
                 <h2>{currentItem.task}</h2>
               </Link>

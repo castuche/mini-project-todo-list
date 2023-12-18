@@ -4,15 +4,22 @@ import { useState } from "react";
 import ItemCard from "./ItemCard.jsx";
 import AddTaskForm from "./AddTaskForm.jsx";
 import itemsList from "../data/items.json";
+import ItemDetailsPage from "../pages/ItemDetailsPage.jsx";
 
 function ItemList() {
   const [items, setItems] = useState(itemsList);
   const [selectedTasks, setSelectedTasks] = useState([]);
+  const [editedTask, setEditedTask] = useState(null); // Track edited task
 
   const handleToggleComplete = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, completed: !item.completed } : item
     );
+    setItems(updatedItems);
+  };
+
+  const handleDeleteTask = (id) => {
+    const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
   };
 
@@ -31,12 +38,25 @@ function ItemList() {
     };
 
     setItems((prevItems) =>
-      formData.completed ? [...prevItems, newTask] : [newTask, ...prevItems]
+      formData.completed
+        ? [...prevItems, newTask]
+        : [newTask, ...prevItems]
     );
   };
 
-  const completedTasks = items.filter((item) => item.completed);
-  const notCompletedTasks = items.filter((item) => !item.completed);
+  const handleUpdateTask = (id, updatedData) => {
+    const updatedItems = items.map((item) =>
+      item.id === id ? { ...item, ...updatedData } : item
+    );
+  
+    setItems(updatedItems);
+    setEditedTask(null); // Clear the edited task after editing
+  
+    // Return the updated items
+    return updatedItems;
+  };
+  
+  
 
   return (
     <div>
@@ -46,26 +66,35 @@ function ItemList() {
         <div className={classes.column}>
           <h2>Done</h2>
           <ItemCard
-            items={completedTasks}
+            items={items.filter((item) => item.completed)}
+            handleDelete={handleDeleteTask}
             handleToggleComplete={handleToggleComplete}
-            handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
-            selectedTasks={selectedTasks}
+            setSelectedTask={(task) => setEditedTask(task)} // Set the task to be edited
           />
         </div>
 
         <div className={classes.column}>
           <h2>To Do</h2>
           <ItemCard
-            items={notCompletedTasks}
+            items={items.filter((item) => !item.completed)}
+            handleDelete={handleDeleteTask}
             handleToggleComplete={handleToggleComplete}
-            handleDelete={(id) => setItems(items.filter((item) => item.id !== id))}
-            selectedTasks={selectedTasks}
+            setSelectedTask={(task) => setEditedTask(task)} // Set the task to be edited
           />
         </div>
       </div>
 
       {selectedTasks.length > 0 && (
         <button onClick={handleDeleteSelected}>Delete Selected</button>
+      )}
+
+      {/* Render the ItemDetailsPage for editing */}
+      {editedTask && (
+        <ItemDetailsPage
+          items={items}
+          handleUpdateTask={handleUpdateTask}
+          setItems = {setItems}
+        />
       )}
     </div>
   );

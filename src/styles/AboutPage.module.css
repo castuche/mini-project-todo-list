@@ -1,0 +1,69 @@
+/* src/styles/AboutPage.module.css */
+
+.aboutContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    color: #2c3e50;
+  }
+  
+  .brandName {
+    font-weight: bold;
+    color: #3498db;
+  }
+  
+  .emphasis {
+    font-style: italic;
+    color: #e74c3c;
+  }
+  
+  #headingMain {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  #paragraphMain {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  #headingFeatures {
+    color: #e74c3c;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .listFeatures {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+  }
+  
+  #headingExtensions {
+    color: #27ae60;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  #paragraphExtensions {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .listExtensions {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #666;
+  }
+  
+  #paragraphEvolution {
+    color: #34495e;
+    line-height: 1.6;
+  }
+  

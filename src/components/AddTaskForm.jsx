@@ -1,14 +1,23 @@
 // AddTaskForm.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from '../styles/AddTaskForm.module.css';
 
-function AddTaskForm({ handleAddTask }) {
+function AddTaskForm({ handleAddTask, initialData }) {
   const [formData, setFormData] = useState({
     task: '',
     completed: false,
     deadline: '',
     priority: 'Low',
+    ...initialData, // Use initialData if provided
   });
+
+  // Update form data when initialData changes
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      ...initialData,
+    }));
+  }, [initialData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +41,7 @@ function AddTaskForm({ handleAddTask }) {
 
   return (
     <form className={classes.addTaskForm} onSubmit={handleSubmit}>
-    <p className={classes.Title}></p>
+      <p className={classes.Title}></p>
       <label>
         Task:
         <input
@@ -70,13 +79,12 @@ function AddTaskForm({ handleAddTask }) {
           onChange={handleChange}
           required
         >
-          <option value="H">High</option>
-          <option value="M">Medium</option>
-          <option value="L">Low</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
         </select>
       </label>
       <button type="submit">Add Task</button>
-
     </form>
   );
 }

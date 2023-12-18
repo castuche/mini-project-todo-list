@@ -1,19 +1,40 @@
-.navbar{
+.navbar {
     display: flex;
     flex-direction: row;
-    background-color: #4a90e2; 
+    background-color: #4a90e2;
     color: white;
     padding: 10px 20px;
     justify-content: space-between;
     align-items: center;
-}
-
-.Appname {
+  }
+  
+  .Appname {
     font-size: 30px;
     font-weight: bold;
-}
-
-.AppIcon {
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease, scale 0.3s ease; /* Smooth transitions */
+  }
+  
+  .Appname:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    color: #ffd700; /* Change color on hover */
+    opacity: 0.8; /* Reduce opacity on hover */
+  }
+  
+  .AppIcon {
     height: 50px;
-}
-
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .activeLink {
+    color: #ffd700;
+  }
+  
+  .navLink:hover {
+    text-decoration: underline;
+  }
+  
