@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <nav className={classes.navbar}>
       <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>
-          <h1 className={classes.Appname}> Your personal task asistant </h1>
+          <h1 className={classes.Appname}> Task asistant </h1>
       </NavLink>
       
       <img src={toDoIcon} alt="App to do list logo" className={classes.AppIcon} />

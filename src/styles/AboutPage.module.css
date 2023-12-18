@@ -4,11 +4,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ecf0f1;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f7;
     transition: background-color 0.2s;
-    color: #2c3e50;
+    color: rgb(127, 165, 255);
   }
   
   .brandName {

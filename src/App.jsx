@@ -21,7 +21,7 @@ return (
     <Routes>
       <Route path='/' element={<DashboardPage/>}/>
       <Route path='/about' element={<AboutPage/>}/>
-      <Route path='/detail/:itemId' element={<ItemDetailsPage items={items} />} />
+      <Route path='/detail/:itemId' element={<ItemDetailsPage items={items} setItems={setItems} />} />
       <Route path='*' element={<NotFoundPage/>}/>
     </Routes>
     </div>

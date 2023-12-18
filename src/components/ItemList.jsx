@@ -5,11 +5,14 @@ import ItemCard from "./ItemCard.jsx";
 import AddTaskForm from "./AddTaskForm.jsx";
 import itemsList from "../data/items.json";
 import ItemDetailsPage from "../pages/ItemDetailsPage.jsx";
+import { useNavigate } from 'react-router-dom';
 
-function ItemList() {
+
+function ItemList({onUpdate}) {
   const [items, setItems] = useState(itemsList);
   const [selectedTasks, setSelectedTasks] = useState([]);
   const [editedTask, setEditedTask] = useState(null); // Track edited task
+  
 
   const handleToggleComplete = (id) => {
     const updatedItems = items.map((item) =>
@@ -44,17 +47,19 @@ function ItemList() {
     );
   };
 
-  const handleUpdateTask = (id, updatedData) => {
-    const updatedItems = items.map((item) =>
-      item.id === id ? { ...item, ...updatedData } : item
-    );
-  
-    setItems(updatedItems);
-    setEditedTask(null); // Clear the edited task after editing
-  
-    // Return the updated items
-    return updatedItems;
-  };
+
+const handleUpdateTask = async (id, updatedData) => {
+  const updatedItems = items.map((item) =>
+    item.id === id ? { ...item, ...updatedData } : item
+  );
+
+  setItems(updatedItems);
+  setEditedTask(null); // Clear the edited task after editing
+
+  onUpdate();
+  navigate('/');
+};
+
   
   
 
@@ -94,6 +99,7 @@ function ItemList() {
           items={items}
           handleUpdateTask={handleUpdateTask}
           setItems = {setItems}
+          onUpdate={onUpdate}
         />
       )}
     </div>

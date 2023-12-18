@@ -1,70 +1,87 @@
 /* AddTaskForm.module.css */
+
 .addTaskForm {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f2f2f7;
-    transition: background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f7;
+  transition: background-color 0.2s;
+}
+
+.addTaskForm:hover {
+  background-color: #d9e0ff;
+}
+
+.addTaskForm label {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: rgb(127, 165, 255);
+}
+
+.addTaskForm input{
+  height: 20px; /* Adjust the height */
+  padding: 8px;
+  border: 1px solid #6574cd; /* Set the border size */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-left: 3%;
+}
+.addTaskForm select {
+  height: 40px; /* Adjust the height */
+  padding: 8px;
+  border: 1px solid #6574cd; /* Set the border size */
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-left: 3%;
+}
+
+.addTaskForm input[type="checkbox"] {
+  margin-left: 3%;
+}
+
+.addTaskForm button {
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  margin-top: 1rem;
+  background-color: rgb(127, 165, 255);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.addTaskForm button:hover {
+  background-color: #4d5aaf;
+}
+
+/* Optional: Add animation to labels */
+.addTaskForm label[for="task"],
+.addTaskForm label[for="completed"],
+.addTaskForm label[for="deadline"],
+.addTaskForm label[for="priority"] {
+  position: relative;
+  display: inline-block;
+  animation: fadeIn 0.8s ease-out;
+  margin-left: auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .addTaskForm:hover {
-    background-color: #d9e0ff;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .addTaskForm label {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: rgb(127, 165, 255);
-  }
-  
-  .addTaskForm input,
-  .addTaskForm select {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #6574cd;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .addTaskForm input[type="checkbox"] {
-    margin-left: 5px;
-  }
-  
-  .addTaskForm button {
-    padding: 10px;
-    background-color: rgb(127, 165, 255);
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  .addTaskForm button:hover {
-    background-color: #4d5aaf;
-  }
-  
-  /* Optional: Add animation to labels */
-  .addTaskForm label[for="task"],
-  .addTaskForm label[for="completed"],
-  .addTaskForm label[for="deadline"],
-  .addTaskForm label[for="priority"] {
-    position: relative;
-    display: inline-block;
-    animation: fadeIn 0.8s ease-out;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}

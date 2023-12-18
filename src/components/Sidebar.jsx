@@ -5,8 +5,8 @@ function Sidebar() {
     return (
       <aside className={classes.sideItems}>
         <ul>
-        <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}><li>Home</li></NavLink>
-        <NavLink to='/about' className={({ isActive }) => (isActive ? 'active' : '')}><li>About</li></NavLink>
+        <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}><li>All Taks</li></NavLink>
+        <NavLink to='/about' className={({ isActive }) => (isActive ? 'active' : '')}><li>Know more</li></NavLink>
         </ul>
       </aside>
     );

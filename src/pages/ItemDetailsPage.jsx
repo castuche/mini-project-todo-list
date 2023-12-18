@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import classes from '../styles/AddTaskForm.module.css';
 
-function ItemDetailsPage({ items, handleUpdateTask, initialData }) {
+function ItemDetailsPage({ items, handleUpdateTask, initialData, onUpdate }) {
   const { itemId } = useParams();
   const navigate = useNavigate();
 
@@ -35,15 +35,17 @@ function ItemDetailsPage({ items, handleUpdateTask, initialData }) {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Update the task with the edited data
-    handleUpdateTask(itemId, formData);
-    // Update the items in ItemList
-    setItems(handleUpdateTask(itemId, formData));
-    // Redirect back to the dashboard
-    navigate('/');
-  };
+// ItemDetailsPage.jsx
+const handleSubmit = (e) => {
+  e.preventDefault();
+  handleUpdateTask(itemId, formData);
+  // Notify the DashboardPage about the update
+  onUpdate();
+  // Redirect back to the dashboard
+  navigate('/');
+};
+
+
   
 
   return (
@@ -92,9 +94,9 @@ function ItemDetailsPage({ items, handleUpdateTask, initialData }) {
             <option value="Low">Low</option>
           </select>
         </label>
-        <Link to = "/">
-        <button type="submit" onClick={() => handleSubmit()}>Save Changes</button>  
-        </Link>
+
+        <button type="submit">Save Changes</button>
+
       </form>
     </>
   );
