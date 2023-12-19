@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import classes from '../styles/AddTaskForm.module.css';
 
-function ItemDetailsPage({ items, handleUpdateTask, initialData, onUpdate }) {
+function ItemDetailsPage({ items, setItems, handleUpdateTask, initialData, onUpdate }) {
   const { itemId } = useParams();
   const navigate = useNavigate();
 
@@ -38,15 +38,23 @@ function ItemDetailsPage({ items, handleUpdateTask, initialData, onUpdate }) {
 // ItemDetailsPage.jsx
 const handleSubmit = (e) => {
   e.preventDefault();
-  handleUpdateTask(itemId, formData);
-  // Notify the DashboardPage about the update
-  onUpdate();
-  // Redirect back to the dashboard
+  let newItems = items.map((item)=> 
+  {
+    if(item.id==itemId){
+      return formData;
+    }else{
+      return item;
+    }
+  }
+  )
+  setItems(newItems)
+  //handleUpdateTask(itemId, formData);
+  //onUpdate();
+  
   navigate('/');
 };
 
 
-  
 
   return (
     <>
@@ -95,7 +103,9 @@ const handleSubmit = (e) => {
           </select>
         </label>
 
+        
         <button type="submit">Save</button>
+        
 
       </form>
     </>

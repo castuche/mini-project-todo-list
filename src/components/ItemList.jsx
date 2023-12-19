@@ -3,13 +3,12 @@ import classes from "../styles/ItemsList.module.css";
 import { useState } from "react";
 import ItemCard from "./ItemCard.jsx";
 import AddTaskForm from "./AddTaskForm.jsx";
-import itemsList from "../data/items.json";
 import ItemDetailsPage from "../pages/ItemDetailsPage.jsx";
 import { useNavigate } from 'react-router-dom';
 
 
-function ItemList({onUpdate}) {
-  const [items, setItems] = useState(itemsList);
+function ItemList({onUpdate, items, setItems}) {
+  
   const [selectedTasks, setSelectedTasks] = useState([]);
   const [editedTask, setEditedTask] = useState(null); // Track edited task
   
