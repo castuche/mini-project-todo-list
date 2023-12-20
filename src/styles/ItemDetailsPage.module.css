@@ -1,0 +1,62 @@
+/* AddTaskForm.module.css */
+
+/* Body styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('../assets/Backgournd_main.png'); /* Replace with your overall background image */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+  }
+  
+  /* ItemDetailsPage specific styles */
+  .addTaskForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-image: url('../assets/Backgournd_main.png'); /* Replace with your item details background image */
+    background-size: cover;
+    background-position: center;
+    color:  rgb(127, 165, 255); /* Set text color to white for better contrast with the background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .addTaskForm label {
+    margin: 10px 0;
+    display: block;
+  }
+  
+  .addTaskForm input,
+  .addTaskForm select,
+  .addTaskForm button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .addTaskForm button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect to the button */
+  }
+  
+  .addTaskForm button:hover {
+    background-color: #45a049;
+  }
+  
+  .addTaskForm h2 {
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow for better visibility */
+  }
+  
+

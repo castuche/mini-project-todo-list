@@ -8,6 +8,7 @@
     background-color: #f2f2f7;
     transition: background-color 0.2s;
     color: rgb(127, 165, 255);
+    background-image: url('../assets/Backgournd_main.png'); 
   }
   
   .brandName {

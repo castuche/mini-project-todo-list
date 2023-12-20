@@ -31,7 +31,7 @@ return (
     <div className='middle-content'>
     <Sidebar/>
     <Routes>
-      <Route path='/' element={<DashboardPage items={items}/>} setItems={setItems}/>
+      <Route path='/' element={<DashboardPage items={items} setItems={setItems}/>} />
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/detail/:itemId' element={<ItemDetailsPage items={items} setItems={setItems}  handleUpdateTask = {handleUpdateTask}/>} />
       <Route path='*' element={<NotFoundPage/>}/>

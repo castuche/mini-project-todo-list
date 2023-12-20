@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import classes from '../styles/AddTaskForm.module.css';
+import classes from '../styles/ItemDetailsPage.module.css'; 
 
 function ItemDetailsPage({ items, setItems, handleUpdateTask, initialData, onUpdate }) {
   const { itemId } = useParams();
@@ -58,7 +58,7 @@ const handleSubmit = (e) => {
 
   return (
     <>
-      <h2>Task</h2>
+      <h2></h2>
       <form className={classes.addTaskForm} onSubmit={handleSubmit}>
         <label>
           Task:
